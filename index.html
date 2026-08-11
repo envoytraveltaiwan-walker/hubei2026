@@ -15,6 +15,7 @@
             --primary-gold: #B88E4C;     /* 古桐金 */
             --accent-red: #A62B1E;       /* 朱砂紅 */
             --line-green: #06C755;       /* LINE 官方綠色 */
+            --form-blue: #1A73E8;        /* 表單藍色 */
             --border-color: #DCD7CE;     /* 細灰線 */
         }
 
@@ -43,13 +44,13 @@
             justify-content: space-around;
             align-items: center;
             z-index: 100;
-            padding: 0 10px;
+            padding: 0 5px;
         }
 
         .top-nav a {
             color: var(--text-main);
             text-decoration: none;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
             transition: color 0.2s;
         }
@@ -102,7 +103,7 @@
         /* 首頁 Banner */
         .hero-block {
             text-align: center;
-            padding: 30px 15px;
+            padding: 25px 15px 15px;
             background: linear-gradient(180deg, rgba(184, 142, 76, 0.08) 0%, rgba(255,255,255,0) 100%);
         }
 
@@ -126,6 +127,69 @@
             display: inline-block;
             padding: 0 12px;
             margin-top: 10px;
+        }
+
+        /* 報名表單專用卡片 */
+        .form-box {
+            background: #FFF;
+            border: 2px solid var(--primary-gold);
+            border-radius: 8px;
+            padding: 18px 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 14px rgba(184, 142, 76, 0.15);
+        }
+
+        .form-box h3 {
+            font-size: 18px;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .form-box p {
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.6;
+            margin-bottom: 14px;
+            font-family: sans-serif;
+        }
+
+        .btn-form {
+            display: inline-block;
+            background-color: var(--primary-gold);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 12px 22px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(184, 142, 76, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
+            font-family: sans-serif;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-form:active {
+            transform: scale(0.98);
+            background-color: #a37c3f;
+        }
+
+        /* 嵌入式表單 (iframe) 容器 */
+        .iframe-container {
+            width: 100%;
+            height: 520px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-top: 12px;
+        }
+
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* 4 大亮點 */
@@ -283,7 +347,7 @@
             color: var(--text-main);
         }
 
-        /* 頁面內引導加 LINE 官方帳號卡片 */
+        /* 引導加 LINE 官方帳號卡片 */
         .cta-box {
             background: #FFF;
             border: 2px solid var(--line-green);
@@ -344,7 +408,7 @@
             font-weight: 600;
         }
 
-        /* 🔴 懸浮固定底部按鈕 (Sticky Floating Bar) */
+        /* 🔴 懸浮固定底部按鈕列 */
         .sticky-floating-bar {
             position: fixed;
             bottom: 12px;
@@ -353,30 +417,37 @@
             width: calc(100% - 24px);
             max-width: 576px;
             z-index: 999;
+            display: flex;
+            gap: 8px;
         }
 
-        .sticky-btn-line {
+        .sticky-btn {
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--line-green);
             color: #FFFFFF;
             text-decoration: none;
             font-weight: 700;
-            font-size: 13.5px;
-            padding: 14px 16px;
+            font-size: 13px;
+            padding: 13px 8px;
             border-radius: 50px;
-            box-shadow: 0 6px 20px rgba(6, 199, 85, 0.4);
             text-align: center;
-            letter-spacing: 0.3px;
-            line-height: 1.3;
-            transition: transform 0.2s, background-color 0.2s;
+            line-height: 1.2;
             font-family: sans-serif;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
         }
 
-        .sticky-btn-line:active {
+        .sticky-btn-form {
+            background-color: var(--primary-gold);
+        }
+
+        .sticky-btn-line {
+            background-color: var(--line-green);
+        }
+
+        .sticky-btn:active {
             transform: scale(0.98);
-            background-color: #05b34c;
         }
     </style>
 </head>
@@ -385,6 +456,7 @@
     <!-- 頂部固定導覽列 -->
     <nav class="top-nav">
         <a href="#hero">首頁</a>
+        <a href="#form-top">線上報名</a>
         <a href="#highlights">四大亮點</a>
         <a href="#timeline">時空路線</a>
         <a href="#itinerary">每日行程</a>
@@ -403,6 +475,18 @@
             </div>
             <div style="font-size: 11.5px; color: var(--primary-gold); margin-top: 15px;">
                 直飛航班：東航（桃園直飛） / 華信（松山直飛）
+            </div>
+        </section>
+
+        <!-- 🔴 頂部 報名填寫表單 區塊 -->
+        <section id="form-top" class="form-box">
+            <h3>📝 報名填寫表單（頂部快速填寫）</h3>
+            <p>請填寫下方 Google 報名表單，或點擊按鈕直接開啟全螢幕表單進行報名：</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScCj7TMdBJWpRlOGF7munk5J9AW1NSnA6UR1S7rz2TF0GMBVw/viewform?usp=header" class="btn-form" target="_blank">
+                👉 點此前往 Google 報名表單
+            </a>
+            <div class="iframe-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScCj7TMdBJWpRlOGF7munk5J9AW1NSnA6UR1S7rz2TF0GMBVw/viewform?embedded=true" loading="lazy">載入中…</iframe>
             </div>
         </section>
 
@@ -432,7 +516,7 @@
             </div>
         </section>
 
-        <!-- 3. 長江畫卷·時空路線圖 -->
+        <!-- 3. 長江畫卷·時空路線圖 (6 大精準點位) -->
         <section id="timeline" class="section-block">
             <div class="section-header">
                 <div class="font-calligraphy section-title">長江畫卷 · 時空路線圖</div>
@@ -603,7 +687,7 @@
                     <li><strong>團費現金價</strong>：20,500 元 / 位</li>
                     <li><strong>住宿安排</strong>：全程兩人一間房（雙人房型標準）</li>
                     <li><strong>費用包含</strong>：機票、機場稅、履約險 300 萬附加意外險 20 萬</li>
-                    <li><strong>費用不含</strong>：領隊、導誘、司機小費</li>
+                    <li><strong>費用不含</strong>：領隊、導遊、司機小費</li>
                     <li><strong>報名訂金</strong>：4,000 元 / 位</li>
                 </ul>
             </div>
@@ -627,7 +711,19 @@
             </div>
         </section>
 
-        <!-- 6. 行前通知 & 頁面內引導卡片 -->
+        <!-- 🔴 底部 報名填寫表單 區塊 -->
+        <section id="form-bottom" class="form-box">
+            <h3>📝 報名填寫表單（底部線上填寫）</h3>
+            <p>請填寫下方 Google 報名表單，或點擊按鈕直接開啟全螢幕表單進行報名：</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScCj7TMdBJWpRlOGF7munk5J9AW1NSnA6UR1S7rz2TF0GMBVw/viewform?usp=header" class="btn-form" target="_blank">
+                👉 點此前往 Google 報名表單
+            </a>
+            <div class="iframe-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScCj7TMdBJWpRlOGF7munk5J9AW1NSnA6UR1S7rz2TF0GMBVw/viewform?embedded=true" loading="lazy">載入中…</iframe>
+            </div>
+        </section>
+
+        <!-- 6. 行前通知 & 引導加入 LINE 卡片 -->
         <div class="cta-box">
             <h3>💬 行前通知與聯繫管道</h3>
             <p>
@@ -635,6 +731,9 @@
                 <b>「中文姓名 + 班級 ＋ 參加湖北團」</b><br>
                 <small>（例如：張小明 開心班 參加湖北團）</small>，即可完成報名與對點喔！
             </p>
+            <a href="https://lin.ee/Z3c7Qam" class="btn-line" target="_blank" style="display:inline-block; background:#06C755; color:#FFF; text-decoration:none; padding:10px 18px; border-radius:30px; font-weight:700; font-size:13px;">
+                💬 加 LINE 私訊「中文姓名+班級+參加湖北團」
+            </a>
         </div>
 
         <!-- 7. 頁尾旅行社專案負責人資訊 -->
@@ -649,10 +748,13 @@
 
     </div>
 
-    <!-- 🔴 8. 懸浮固定底部按鈕 (全頁隨滾動固定顯示) -->
+    <!-- 🔴 8. 雙功能懸浮固定底部按鈕列 -->
     <div class="sticky-floating-bar">
-        <a href="https://lin.ee/Z3c7Qam" class="sticky-btn-line" target="_blank">
-            💬 加 LINE 私訊「中文姓名+班級+參加湖北團」完成報名
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScCj7TMdBJWpRlOGF7munk5J9AW1NSnA6UR1S7rz2TF0GMBVw/viewform?usp=header" class="sticky-btn sticky-btn-form" target="_blank">
+            📝 報名填寫表單
+        </a>
+        <a href="https://lin.ee/Z3c7Qam" class="sticky-btn sticky-btn-line" target="_blank">
+            💬 加 LINE 官方對點
         </a>
     </div>
 
@@ -681,3 +783,9 @@
     </script>
 </body>
 </html>
+```eof
+
+已為您將 Google 報名表單（`[https://docs.google.com/forms/d/e/1FAIpQLScCj7TMdBJWpRlOGF7munk5J9AW1NSnA6UR1S7rz2TF0GMBVw/viewform](https://docs.google.com/forms/d/e/1FAIpQLScCj7TMdBJWpRlOGF7munk5J9AW1NSnA6UR1S7rz2TF0GMBVw/viewform)`）放置於：
+1. **網頁最上方**：緊接著 Hero 簡介 banner，方便一進網頁就填寫。
+2. **網頁最下方**：位於報名須知下方，看完行程後可直接填寫。
+3. **雙按鈕懸浮列**：螢幕底部固定雙按鈕，一鍵直達「📝 報名填寫表單」與「💬 加 LINE 官方對點」！
