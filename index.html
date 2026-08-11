@@ -39,7 +39,7 @@
             padding-bottom: 85px; /* 懸浮按鈕空間 */
         }
 
-        /* 頂部固定導覽列 */
+        /* 頂部固定按鈕區 */
         .top-nav {
             position: fixed;
             top: 0;
@@ -50,22 +50,35 @@
             backdrop-filter: blur(6px);
             border-bottom: 1px solid var(--border-color);
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
+            gap: 12px;
             z-index: 1000;
-            padding: 0 4px;
+            padding: 0 12px;
         }
 
-        .top-nav a {
-            color: var(--text-main);
+        .top-nav-btn {
+            flex: 1;
+            max-width: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 34px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
             text-decoration: none;
-            font-size: 12px;
-            font-weight: 600;
-            white-space: nowrap;
+            color: #FFF;
+            font-family: sans-serif;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
         }
 
-        .top-nav a:hover, .top-nav a.active {
-            color: var(--accent-red);
+        .top-nav-btn.btn-line {
+            background-color: var(--line-green);
+        }
+
+        .top-nav-btn.btn-form {
+            background-color: var(--primary-gold);
         }
 
         /* 主容器 */
@@ -181,10 +194,6 @@
             font-family: sans-serif;
             width: 100%;
             margin: 0 auto;
-        }
-
-        .btn-form:active {
-            background-color: #a37c3f;
         }
 
         /* 內嵌 Google 表單容器 */
@@ -434,7 +443,7 @@
             font-weight: 600;
         }
 
-        /* 🔴 懸浮固定底部按鈕列 (Fixed Bottom Bar) */
+        /* 🔴 懸浮固定底部按鈕列 */
         .sticky-floating-bar {
             position: fixed;
             bottom: 8px;
@@ -479,14 +488,14 @@
 </head>
 <body>
 
-    <!-- 頂部固定導覽列 -->
+    <!-- 頂部固定按鈕區 -->
     <nav class="top-nav">
-        <a href="#hero">首頁</a>
-        <a href="#form-top">線上報名</a>
-        <a href="#highlights">四大亮點</a>
-        <a href="#timeline">時空路線</a>
-        <a href="#itinerary">每日行程</a>
-        <a href="#notice">報名須知</a>
+        <a href="https://lin.ee/Z3c7Qam" class="top-nav-btn btn-line" target="_blank">
+            💬 加入 Line
+        </a>
+        <a href="#form-bottom" class="top-nav-btn btn-form">
+            📝 線上報名
+        </a>
     </nav>
 
     <!-- 一頁式內容容器 -->
@@ -504,8 +513,7 @@
             </div>
         </section>
 
-
-        <!-- 3. 四大主題亮點 -->
+        <!-- 2. 四大主題亮點 -->
         <section id="highlights" class="section-block">
             <div class="section-header">
                 <div class="font-calligraphy section-title">行程四大主題亮點</div>
@@ -531,7 +539,7 @@
             </div>
         </section>
 
-        <!-- 4. 長江畫卷·時空路線圖 -->
+        <!-- 3. 長江畫卷·時空路線圖 -->
         <section id="timeline" class="section-block">
             <div class="section-header">
                 <div class="font-calligraphy section-title">長江畫卷 · 時空路線圖</div>
@@ -583,7 +591,7 @@
             </div>
         </section>
 
-        <!-- 5. 每日行程 (手風琴互動，點擊展開) -->
+        <!-- 4. 每日行程 (手風琴互動，點擊展開) -->
         <section id="itinerary" class="section-block">
             <div class="section-header">
                 <div class="font-calligraphy section-title">每日詳細行程</div>
@@ -689,7 +697,7 @@
             </div>
         </section>
 
-        <!-- 6. 證件與費用須知 -->
+        <!-- 5. 證件與費用須知 -->
         <section id="notice" class="section-block">
             <div class="section-header">
                 <div class="font-calligraphy section-title">證件須知與費用說明</div>
@@ -726,7 +734,7 @@
             </div>
         </section>
 
-        <!-- 7. 底部 報名填寫表單 區塊 -->
+        <!-- 6. 底部 報名填寫表單 區塊 -->
         <section id="form-bottom" class="form-box">
             <h3>📝 報名填寫表單（線上填寫）</h3>
             <p>請直接在下方填寫表單，或點擊按鈕跳轉至全螢幕報名：</p>
@@ -738,7 +746,7 @@
             </div>
         </section>
 
-        <!-- 8. 行前通知 & 引導加入 LINE 卡片 -->
+        <!-- 7. 行前通知 & 引導加入 LINE 卡片 -->
         <div class="cta-box">
             <h3>💬 行前通知與聯繫管道</h3>
             <p>
@@ -751,7 +759,7 @@
             </a>
         </div>
 
-        <!-- 9. 頁尾旅行社專案負責人資訊 -->
+        <!-- 8. 頁尾旅行社專案負責人資訊 -->
         <footer class="agency-footer">
             <div class="agency-title">安捷國際旅行社</div>
             <div>台北市長安東路2段50號5樓之1 ｜ 交觀甲5920</div>
@@ -763,13 +771,13 @@
 
     </div>
 
-    <!-- 🔴 10. 懸浮固定底部雙按鈕列 -->
+    <!-- 🔴 9. 懸浮固定底部雙按鈕列 -->
     <div class="sticky-floating-bar">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScCj7TMdBJWpRlOGF7munk5J9AW1NSnA6UR1S7rz2TF0GMBVw/viewform?usp=header" class="sticky-btn sticky-btn-form" target="_blank">
             📝 報名填寫表單
         </a>
         <a href="https://lin.ee/Z3c7Qam" class="sticky-btn sticky-btn-line" target="_blank">
-            💬 加 LINE 官方對點
+            💬 加 LINE 官方
         </a>
     </div>
 
@@ -781,7 +789,7 @@
         }
 
         // 頂部選單平滑滾動
-        document.querySelectorAll('.top-nav a').forEach(anchor => {
+        document.querySelectorAll('.top-nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
