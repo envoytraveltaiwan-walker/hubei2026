@@ -25,7 +25,8 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            padding-top: 50px; /* 給固定頂部導覽列留空間 */
+            padding-top: 50px;    /* 頂部固定導覽列空間 */
+            padding-bottom: 85px; /* 底部懸浮按鈕空間 */
         }
 
         /* 頂部固定導覽列 */
@@ -282,7 +283,7 @@
             color: var(--text-main);
         }
 
-        /* 引導加 LINE 官方帳號跳轉卡片 (CTA Box) */
+        /* 頁面內引導加 LINE 官方帳號卡片 */
         .cta-box {
             background: #FFF;
             border: 2px solid var(--line-green);
@@ -308,25 +309,6 @@
             font-family: sans-serif;
         }
 
-        .btn-line {
-            display: inline-block;
-            background-color: var(--line-green);
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            padding: 12px 20px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(6, 199, 85, 0.3);
-            transition: transform 0.2s, background-color 0.2s;
-            font-family: sans-serif;
-        }
-
-        .btn-line:active {
-            transform: scale(0.98);
-            background-color: #05b34c;
-        }
-
         /* 頁尾旅行社聯絡資訊 */
         .agency-footer {
             background: #F9F8F5;
@@ -337,7 +319,7 @@
             text-align: center;
             font-size: 12.5px;
             color: var(--text-main);
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             font-family: sans-serif;
         }
 
@@ -360,6 +342,41 @@
             color: var(--accent-red);
             text-decoration: none;
             font-weight: 600;
+        }
+
+        /* 🔴 懸浮固定底部按鈕 (Sticky Floating Bar) */
+        .sticky-floating-bar {
+            position: fixed;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 24px);
+            max-width: 576px;
+            z-index: 999;
+        }
+
+        .sticky-btn-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--line-green);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13.5px;
+            padding: 14px 16px;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(6, 199, 85, 0.4);
+            text-align: center;
+            letter-spacing: 0.3px;
+            line-height: 1.3;
+            transition: transform 0.2s, background-color 0.2s;
+            font-family: sans-serif;
+        }
+
+        .sticky-btn-line:active {
+            transform: scale(0.98);
+            background-color: #05b34c;
         }
     </style>
 </head>
@@ -415,7 +432,7 @@
             </div>
         </section>
 
-        <!-- 3. 長江畫卷·時空路線圖 (6 大精準點位) -->
+        <!-- 3. 長江畫卷·時空路線圖 -->
         <section id="timeline" class="section-block">
             <div class="section-header">
                 <div class="font-calligraphy section-title">長江畫卷 · 時空路線圖</div>
@@ -586,7 +603,7 @@
                     <li><strong>團費現金價</strong>：20,500 元 / 位</li>
                     <li><strong>住宿安排</strong>：全程兩人一間房（雙人房型標準）</li>
                     <li><strong>費用包含</strong>：機票、機場稅、履約險 300 萬附加意外險 20 萬</li>
-                    <li><strong>費用不含</strong>：領隊、導遊、司機小費</li>
+                    <li><strong>費用不含</strong>：領隊、導誘、司機小費</li>
                     <li><strong>報名訂金</strong>：4,000 元 / 位</li>
                 </ul>
             </div>
@@ -610,7 +627,7 @@
             </div>
         </section>
 
-        <!-- 6. 行前通知 & 引導跳轉 LINE 官方帳號卡片 -->
+        <!-- 6. 行前通知 & 頁面內引導卡片 -->
         <div class="cta-box">
             <h3>💬 行前通知與聯繫管道</h3>
             <p>
@@ -618,9 +635,6 @@
                 <b>「中文姓名 + 班級 ＋ 參加湖北團」</b><br>
                 <small>（例如：張小明 開心班 參加湖北團）</small>，即可完成報名與對點喔！
             </p>
-            <a href="https://lin.ee/Z3c7Qam" class="btn-line" target="_blank">
-                💬 加 LINE 私訊「中文姓名+班級+參加湖北團」完成報名
-            </a>
         </div>
 
         <!-- 7. 頁尾旅行社專案負責人資訊 -->
@@ -633,6 +647,13 @@
             </div>
         </footer>
 
+    </div>
+
+    <!-- 🔴 8. 懸浮固定底部按鈕 (全頁隨滾動固定顯示) -->
+    <div class="sticky-floating-bar">
+        <a href="https://lin.ee/Z3c7Qam" class="sticky-btn-line" target="_blank">
+            💬 加 LINE 私訊「中文姓名+班級+參加湖北團」完成報名
+        </a>
     </div>
 
     <script>
