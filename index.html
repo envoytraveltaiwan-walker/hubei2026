@@ -14,6 +14,7 @@
             --text-sub: #555555;         /* 濃墨色 */
             --primary-gold: #B88E4C;     /* 古桐金 */
             --accent-red: #A62B1E;       /* 朱砂紅 */
+            --line-green: #06C755;       /* LINE 官方綠色 */
             --border-color: #DCD7CE;     /* 細灰線 */
         }
 
@@ -281,6 +282,51 @@
             color: var(--text-main);
         }
 
+        /* 引導加 LINE 官方帳號跳轉卡片 (CTA Box) */
+        .cta-box {
+            background: #FFF;
+            border: 2px solid var(--line-green);
+            border-radius: 8px;
+            padding: 20px 16px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 14px rgba(6, 199, 85, 0.12);
+        }
+
+        .cta-box h3 {
+            font-size: 18px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .cta-box p {
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-family: sans-serif;
+        }
+
+        .btn-line {
+            display: inline-block;
+            background-color: var(--line-green);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(6, 199, 85, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
+            font-family: sans-serif;
+        }
+
+        .btn-line:active {
+            transform: scale(0.98);
+            background-color: #05b34c;
+        }
+
         /* 頁尾旅行社聯絡資訊 */
         .agency-footer {
             background: #F9F8F5;
@@ -291,7 +337,6 @@
             text-align: center;
             font-size: 12.5px;
             color: var(--text-main);
-            margin-top: 10px;
             margin-bottom: 30px;
             font-family: sans-serif;
         }
@@ -564,19 +609,21 @@
                 </ul>
             </div>
         </section>
-<!-- 行前通知 & 引導加入官方帳號卡片 -->
-<div class="cta-box">
-  <h3>💬 行前通知與聯繫管道</h3>
-  <p>
-    為了方便傳送行前通知、證件繳交提醒與行程討論，請點擊下方按鈕加入我們的官方聯絡帳號，並請私訊傳送：<br>
-    <b>「中文姓名 + 班級 ＋ 參加湖北團」</b><br>
-    <small>（例如：張小明 開心班 參加湖北團）</small>，即可完成報名與對點喔！
-  </p>
-  <a href="https://lin.ee/Z3c7Qam" class="btn-line" target="_blank">
-    💬 加 LINE 私訊「中文姓名+班級+參加湖北團」完成報名
-  </a>
-</div>
-        <!-- 6. 頁尾旅行社專案負責人資訊 -->
+
+        <!-- 6. 行前通知 & 引導跳轉 LINE 官方帳號卡片 -->
+        <div class="cta-box">
+            <h3>💬 行前通知與聯繫管道</h3>
+            <p>
+                為了方便傳送行前通知、證件繳交提醒與行程討論，請點擊下方按鈕加入我們的官方聯絡帳號，並請私訊傳送：<br>
+                <b>「中文姓名 + 班級 ＋ 參加湖北團」</b><br>
+                <small>（例如：張小明 開心班 參加湖北團）</small>，即可完成報名與對點喔！
+            </p>
+            <a href="https://lin.ee/Z3c7Qam" class="btn-line" target="_blank">
+                💬 加 LINE 私訊「中文姓名+班級+參加湖北團」完成報名
+            </a>
+        </div>
+
+        <!-- 7. 頁尾旅行社專案負責人資訊 -->
         <footer class="agency-footer">
             <div class="agency-title">安捷國際旅行社</div>
             <div>台北市長安東路2段50號5樓之1 ｜ 交觀甲5920</div>
