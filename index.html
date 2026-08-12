@@ -39,7 +39,7 @@
             padding-bottom: 85px; /* 懸浮按鈕空間 */
         }
 
-        /* 頂部固定按鈕區 */
+        /* 頂部固定導覽列 */
         .top-nav {
             position: fixed;
             top: 0;
@@ -50,35 +50,29 @@
             backdrop-filter: blur(6px);
             border-bottom: 1px solid var(--border-color);
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
-            gap: 12px;
             z-index: 1000;
-            padding: 0 12px;
+            padding: 0 4px;
+            overflow-x: auto;
+            white-space: nowrap;
         }
 
-        .top-nav-btn {
-            flex: 1;
-            max-width: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 34px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: 700;
+        .top-nav a {
+            color: var(--text-main);
             text-decoration: none;
-            color: #FFF;
-            font-family: sans-serif;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+            font-size: 11.5px;
+            font-weight: 600;
+            padding: 4px 5px;
+            flex-shrink: 0;
         }
 
-        .top-nav-btn.btn-line {
-            background-color: var(--line-green);
-        }
-
-        .top-nav-btn.btn-form {
+        .top-nav a.nav-btn-highlight {
             background-color: var(--primary-gold);
+            color: #FFFFFF !important;
+            border-radius: 12px;
+            padding: 3px 8px;
+            font-weight: 700;
         }
 
         /* 主容器 */
@@ -152,6 +146,17 @@
             display: inline-block;
             padding: 0 10px;
             margin-top: 8px;
+        }
+
+        .batch-info-box {
+            font-size: 11.5px;
+            color: var(--primary-gold);
+            margin-top: 14px;
+            background: rgba(184, 142, 76, 0.08);
+            padding: 8px 10px;
+            border-radius: 4px;
+            text-align: left;
+            line-height: 1.6;
         }
 
         /* 報名表單卡片 */
@@ -488,14 +493,14 @@
 </head>
 <body>
 
-    <!-- 頂部固定按鈕區 -->
+    <!-- 頂部固定區塊導覽列 -->
     <nav class="top-nav">
-        <a href="https://lin.ee/Z3c7Qam" class="top-nav-btn btn-line" target="_blank">
-            💬 加入 Line
-        </a>
-        <a href="#form-bottom" class="top-nav-btn btn-form">
-            📝 線上報名
-        </a>
+        <a href="#hero">首頁</a>
+        <a href="#highlights">四大亮點</a>
+        <a href="#timeline">時空路線</a>
+        <a href="#itinerary">每日行程</a>
+        <a href="#notice">報名須知</a>
+        <a href="#form-bottom" class="nav-btn-highlight">📝 線上報名</a>
     </nav>
 
     <!-- 一頁式內容容器 -->
@@ -508,8 +513,10 @@
             <div class="hero-quote">
                 以前在課本讀到的，這次親眼來看；以前在社群刷到的，這次親身體驗。
             </div>
-            <div style="font-size: 11px; color: var(--primary-gold); margin-top: 12px;">
-                直飛航班：東航（桃園直飛） / 華信（松山直飛）
+            <div class="batch-info-box font-serif">
+                <strong>🗓️ 出發梯次資訊（先報名優先安排）：</strong><br>
+                • <strong>梯次一</strong>：2027/1/13 - 1/20（東航 桃園-武漢來回）<br>
+                • <strong>梯次二</strong>：2027/1/23 - 1/30（華航 松山-武漢來回）
             </div>
         </section>
 
@@ -607,9 +614,9 @@
                     搭乘直飛航班抵達武漢天河機場 → 專車接送至飯店入住休息。<br>
                     <strong>住宿</strong>：武漢市區飯店
                     <div class="flight-info">
-                        ✈️ 去程參考航班：<br>
-                        • 東航（台北-武漢）：18:40 / 21:05<br>
-                        • 華信（松山-武漢）：13:25 / 16:20
+                        ✈️ 梯次參考航班（去程）：<br>
+                        • 梯次一（2027/1/13）：東航 18:40 / 21:05（桃園-武漢）<br>
+                        • 梯次二（2027/1/23）：華航 13:25 / 16:20（松山-武漢）
                     </div>
                 </div>
             </div>
@@ -689,9 +696,9 @@
                     遊覽【東湖景區】體驗湖光山色 → 專車前往機場搭機返回台北。<br>
                     <strong>住宿</strong>：溫馨的家
                     <div class="flight-info">
-                        ✈️ 回程參考航班：<br>
-                        • 東航（武漢-台北）：15:00 / 17:40<br>
-                        • 華信（武漢-松山）：17:35 / 20:10
+                        ✈️ 梯次參考航班（回程）：<br>
+                        • 梯次一（2027/1/20）：東航 15:00 / 17:40（武漢-桃園）<br>
+                        • 梯次二（2027/1/30）：華航 17:35 / 20:10（武漢-松山）
                     </div>
                 </div>
             </div>
@@ -705,12 +712,16 @@
             </div>
             
             <div class="info-card">
-                <h5>📌 團費與住宿標準</h5>
+                <h5>📌 團費與出發梯次</h5>
                 <ul>
-                    <li><strong>團費現金價</strong>：20,500 元 / 位</li>
+                    <li><strong>團費現金價</strong>：20,100 元 / 位</li>
+                    <li><strong>梯次安排</strong>：
+                        <br>• 梯次一：2027/1/13 - 1/20（東航 桃園來回）
+                        <br>• 梯次二：2027/1/23 - 1/30（華航 松山來回）
+                        <br><em>※ 以先報名順序優先安排梯次。</em>
+                    </li>
                     <li><strong>住宿安排</strong>：全程兩人一間房（雙人房型標準）</li>
                     <li><strong>費用包含</strong>：機票、機場稅、履約險 300 萬附加意外險 20 萬</li>
-                    <li><strong>費用不含</strong>：領隊、導遊、司機小費</li>
                     <li><strong>報名訂金</strong>：4,000 元 / 位</li>
                 </ul>
             </div>
@@ -734,7 +745,7 @@
             </div>
         </section>
 
-        <!-- 6. 底部 報名填寫表單 區塊 -->
+        <!-- 6. 報名填寫表單 區塊 (導覽連結目標) -->
         <section id="form-bottom" class="form-box">
             <h3>📝 報名填寫表單（線上填寫）</h3>
             <p>請直接在下方填寫表單，或點擊按鈕跳轉至全螢幕報名：</p>
@@ -777,7 +788,7 @@
             📝 報名填寫表單
         </a>
         <a href="https://lin.ee/Z3c7Qam" class="sticky-btn sticky-btn-line" target="_blank">
-            💬 加 LINE 官方
+            💬 加 LINE 官方對點
         </a>
     </div>
 
@@ -806,3 +817,12 @@
     </script>
 </body>
 </html>
+```eof
+
+### 📝 主要更新項目總結：
+1. **團費更新**：已調整為 **20,100 元 / 位**。
+2. **新增出發梯次與航班說明**：
+   * **梯次一**：2027/1/13 - 1/20（東航 桃園-武漢來回）
+   * **梯次二**：2027/1/23 - 1/30（華航 松山-武漢來回）
+   * **優先規則**：標註「以先報名順序優先安排梯次」。
+3. **刪除小費事項**：費用說明中已全面移除領隊、導誘、司機小費之項目與警語。
