@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #F2EFE9;          /* 宣紙米白 */
+            --bg-color: #F2EFE9;         /* 宣紙米白 */
             --card-bg: #FFFFFF;
             --text-main: #1A1A1A;        /* 焦墨色 */
             --text-sub: #555555;         /* 濃墨色 */
@@ -149,14 +149,15 @@
         }
 
         .batch-info-box {
-            font-size: 11.5px;
-            color: var(--primary-gold);
+            font-size: 12px;
+            color: var(--text-main);
             margin-top: 14px;
             background: rgba(184, 142, 76, 0.08);
-            padding: 8px 10px;
+            padding: 12px;
             border-radius: 4px;
             text-align: left;
-            line-height: 1.6;
+            line-height: 1.8;
+            border: 1px solid rgba(184, 142, 76, 0.2);
         }
 
         /* 報名表單卡片 */
@@ -448,7 +449,7 @@
             font-weight: 600;
         }
 
-        /* 🔴 懸浮固定底部按鈕列 */
+        /* 懸浮固定底部按鈕列 */
         .sticky-floating-bar {
             position: fixed;
             bottom: 8px;
@@ -478,17 +479,9 @@
             box-shadow: 0 4px 14px rgba(0,0,0,0.2);
         }
 
-        .sticky-btn-form {
-            background-color: var(--primary-gold);
-        }
-
-        .sticky-btn-line {
-            background-color: var(--line-green);
-        }
-
-        .sticky-btn:active {
-            transform: scale(0.97);
-        }
+        .sticky-btn-form { background-color: var(--primary-gold); }
+        .sticky-btn-line { background-color: var(--line-green); }
+        .sticky-btn:active { transform: scale(0.97); }
     </style>
 </head>
 <body>
@@ -600,7 +593,7 @@
             </div>
         </section>
 
-        <!-- 4. 每日行程 (手風琴互動，點擊展開) -->
+        <!-- 4. 每日行程 -->
         <section id="itinerary" class="section-block">
             <div class="section-header">
                 <div class="font-calligraphy section-title">每日詳細行程</div>
@@ -617,8 +610,7 @@
                     <strong>住宿</strong>：武漢市區飯店
                     <div class="flight-info">
                         ✈️ 參考航班（去程）：<br>
-                        • （2027/1/14）：東航 18:40 / 21:05（桃園-武漢）<br>
-            
+                        • 2027/1/14：東航 18:40 - 21:05（桃園-武漢）
                     </div>
                 </div>
             </div>
@@ -698,9 +690,8 @@
                     遊覽【東湖景區】體驗湖光山色 → 專車前往機場搭機返回台北。<br>
                     <strong>住宿</strong>：溫馨的家
                     <div class="flight-info">
-                        ✈️ 梯次參考航班（回程）：<br>
-                        • （2027/1/21）：東航 15:00 / 17:40（武漢-桃園）<br>
-                    
+                        ✈️ 參考航班（回程）：<br>
+                        • 2027/1/21：東航 15:00 - 17:40（武漢-桃園）
                     </div>
                 </div>
             </div>
@@ -717,11 +708,7 @@
                 <h5>📌 團費與出發日期</h5>
                 <ul>
                     <li><strong>團費現金價</strong>：19,600 元 / 位</li>
-                    <li><strong>日期安排</strong>：
-                        <br>• 2027/1/14 - 1/21（東航 桃園來回）
-                    
-                        <br><em>※ 以先報名順序優先安排梯次。</em>
-                    </li>
+                    <li><strong>日期安排</strong>：2027/1/14 - 1/21</li>
                     <li><strong>住宿安排</strong>：全程兩人一間房（雙人房型標準）</li>
                     <li><strong>費用包含</strong>：機票、機場稅、履約險 300 萬附加意外險 20 萬</li>
                     <li><strong>報名訂金</strong>：4,000 元 / 位</li>
@@ -732,22 +719,13 @@
                 <h5>🪪 台胞證申辦須知（費用 1,500 元）</h5>
                 <ul>
                     <li><strong>護照正本</strong>：效期須在 6 個月以上。</li>
-                    <li><strong>身分證影本</strong>：1:1 比例清晰影印（未滿 14/16 歲附戶籍謄本或戶口名簿）。</li>
-                    <li><strong>相片需求</strong>：2 吋彩色白底近照 2 張（6 個月內免冠照、不戴眼鏡/變色片、衣服避免純白）。</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h5>📖 中華民國護照申辦須知（費用 1,500 元）</h5>
-                <ul>
-                    <li><strong>基本應備文件</strong>：身分證正本（繳驗）、大頭照 2 張（6個月內彩色白底 4.5×3.5cm）、簡式護照資料表。</li>
-                    <li><strong>【首次辦理（新辦）】</strong>：須先至戶政事務所辦理「人別確認」。</li>
-                    <li><strong>【換發護照（舊換新）】</strong>：若舊護照效期屆滿或不足 1 年，須繳交原護照截角作廢。</li>
+                    <li><strong>身分證影本</strong>：1:1 比例清晰影印。</li>
+                    <li><strong>相片需求</strong>：2 吋彩色白底近照 2 張。</li>
                 </ul>
             </div>
         </section>
 
-        <!-- 6. 報名填寫表單 區塊 (導覽連結目標) -->
+        <!-- 6. 報名表單 -->
         <section id="form-bottom" class="form-box">
             <h3>📝 報名填寫表單（線上填寫）</h3>
             <p>請直接在下方填寫表單，或點擊按鈕跳轉至全螢幕報名：</p>
@@ -759,20 +737,16 @@
             </div>
         </section>
 
-        <!-- 7. 行前通知 & 引導加入 LINE 卡片 -->
+        <!-- 7. 行前通知 -->
         <div class="cta-box">
             <h3>💬 行前通知與聯繫管道</h3>
-            <p>
-                為了方便傳送行前通知、證件繳交提醒與行程討論，請點擊下方按鈕加入我們的官方聯絡帳號，並請私訊傳送：<br>
-                <b>「中文姓名 + 班級 ＋ 參加湖北團」</b><br>
-                <small>（例如：張小明 開心班 參加湖北團）</small>，即可完成報名與對點喔！
-            </p>
+            <p>請加入官方聯絡帳號，並私訊：<br><b>「中文姓名 + 班級 ＋ 參加湖北團」</b></p>
             <a href="https://lin.ee/Z3c7Qam" class="btn-line-inline" target="_blank">
-                💬 加 LINE 私訊「中文姓名+班級+參加湖北團」
+                💬 加 LINE 私訊報名
             </a>
         </div>
 
-        <!-- 8. 頁尾旅行社專案負責人資訊 -->
+        <!-- 8. 頁尾 -->
         <footer class="agency-footer">
             <div class="agency-title">安捷國際旅行社</div>
             <div>台北市長安東路2段50號5樓之1 ｜ 交觀甲5920</div>
@@ -781,42 +755,29 @@
                 電話：<a href="tel:0232335894">02-3233 5894</a> ｜ 手機：<a href="tel:0933464254">0933 464 254</a>
             </div>
         </footer>
-
     </div>
 
-    <!-- 🔴 9. 懸浮固定底部雙按鈕列 -->
+    <!-- 9. 懸浮固定底部雙按鈕列 -->
     <div class="sticky-floating-bar">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScCj7TMdBJWpRlOGF7munk5J9AW1NSnA6UR1S7rz2TF0GMBVw/viewform?usp=header" class="sticky-btn sticky-btn-form" target="_blank">
-            📝 報名填寫表單
-        </a>
-        <a href="https://lin.ee/Z3c7Qam" class="sticky-btn sticky-btn-line" target="_blank">
-            💬 加 LINE 官方對點
-        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScCj7TMdBJWpRlOGF7munk5J9AW1NSnA6UR1S7rz2TF0GMBVw/viewform?usp=header" class="sticky-btn sticky-btn-form" target="_blank">📝 報名表單</a>
+        <a href="https://lin.ee/Z3c7Qam" class="sticky-btn sticky-btn-line" target="_blank">💬 加 LINE 官方對點</a>
     </div>
 
     <script>
-        // 手風琴展開/收摺互動
         function toggleAccordion(header) {
             const item = header.parentElement;
             item.classList.toggle('active');
         }
-
-        // 頂部選單平滑滾動
         document.querySelectorAll('.top-nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
                 if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 55,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: targetElement.offsetTop - 55, behavior: 'smooth' });
                 }
             });
         });
     </script>
 </body>
 </html>
-
